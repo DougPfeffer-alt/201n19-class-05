@@ -85,11 +85,11 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-var sum1 = sum(sumArr[0], sumArr[1])[0];
-var sum2 = sum(sum1, sumArr[2])[0];
-console.log(sum2);
-var sumString = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sum2} is their sum.`;
-return [sum2, sumString];
+  var sum1 = sum(sumArr[0], sumArr[1])[0];
+  var sum2 = sum(sum1, sumArr[2])[0];
+  console.log(sum2);
+  var sumString = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sum2} is their sum.`;
+  return [sum2, sumString];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -110,11 +110,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-var multi1 = multiply(multArr[0], multArr[1])[0];
-var multi2 = multiply(multi1, multArr[2])[0];
-console.log(multi2);
-var multiplyString = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${multi2}.`;
-return [multi2, multiplyString];
+  var multi1 = multiply(multArr[0], multArr[1])[0];
+  var multi2 = multiply(multi1, multArr[2])[0];
+  console.log(multi2);
+  var multiplyString = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${multi2}.`;
+  return [multi2, multiplyString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
@@ -142,10 +142,16 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  var multi1 = dynamicArray[0];
+  for (var i = 1; i < dynamicArray.length; i++) {
+    multi1 = multiply(dynamicArray[i], multi1)[0];
+    console.log(multi1);
+  }
+  var theString = `The numbers ${dynamicArray} have a product of ${multi1}.`;
+  return [multi1, theString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
