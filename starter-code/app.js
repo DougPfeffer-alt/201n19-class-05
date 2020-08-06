@@ -63,7 +63,6 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   var sumString = `${a} and ${b} and ${c} sum to ${sum2[0]}.`;
   var productString = `The product of ${a} and ${b} and ${c} is ${product2[0]}.`;
   return [sum2[0], product2[0], sumString, productString];
-}
 
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
